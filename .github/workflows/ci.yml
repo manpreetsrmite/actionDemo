@@ -28,3 +28,9 @@ jobs:
       - name: Build with Maven
         working-directory: ./actions
         run: mvn clean verify
+        
+      - name: Upload JAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: actions
+          path: actions/target/*.jar
